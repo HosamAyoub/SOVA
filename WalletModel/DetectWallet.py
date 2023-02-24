@@ -22,7 +22,7 @@ def callImage():
     #time.sleep(5)
     
     img = cv2.imread(img_path)
-    results = model(img, conf=0.5 , save=False)
+    results = model(img, conf=0.5 , save=True)
     return results,img, img_path
 
 
@@ -43,6 +43,7 @@ def position():
         yleft =results[0].boxes.xyxy.cpu().numpy()[0][1] 
     except:
         print('No Wallets found')
+        os.system ("mpg321 VoiceCommands/NoWallet.mp3")
         return isIdeal,path
     #Locating the center of the box
     xc = (xright - xleft)/2 +xleft
@@ -125,10 +126,12 @@ while isIdeal== False:
         os.remove(path)
     except IndexError:
          print('No wallets infront of you')
+         os.system ("mpg321 VoiceCommands/NoWallet.mp3")
          os.remove(path)
          continue
     except FileNotFoundError:
         print('No such file, Process Terminated')
+        os.system ("mpg321 VoiceCommands/Terminated.mp3")
         break   
     
     
