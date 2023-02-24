@@ -1,9 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[7]:
-
-
 import ultralytics
 from ultralytics import YOLO
 import os 
@@ -12,14 +6,11 @@ import numpy as np
 #from picamera2 import Picamera2 , Preview
 import time
 
-# In[8]:
 
 #picam2 = Picamera2()
 model = YOLO('Wallet.pt')
 model.fuse()
 
-
-# In[20]:
 
 def callImage():
     #img_path = input("Enter PATH of Image : ")
@@ -31,11 +22,9 @@ def callImage():
     #time.sleep(5)
     
     img = cv2.imread(img_path)
-    results = model(img, conf=0.5 , save=True)
+    results = model(img, conf=0.5 , save=False)
     return results,img, img_path
 
-
-# In[21]:
 
 
 def position():
@@ -47,11 +36,14 @@ def position():
     isIdeal = False
     results , img, path = callImage()
     # getting the location of box corners 
-    xright =results[0].boxes.xyxy.cpu().numpy()[0][2] 
-    xleft =results[0].boxes.xyxy.cpu().numpy()[0][0] 
-    yright =results[0].boxes.xyxy.cpu().numpy()[0][3] 
-    yleft =results[0].boxes.xyxy.cpu().numpy()[0][1] 
-
+    try:
+        xright =results[0].boxes.xyxy.cpu().numpy()[0][2] 
+        xleft =results[0].boxes.xyxy.cpu().numpy()[0][0] 
+        yright =results[0].boxes.xyxy.cpu().numpy()[0][3] 
+        yleft =results[0].boxes.xyxy.cpu().numpy()[0][1] 
+    except:
+        print('No Wallets found')
+        return isIdeal,path
     #Locating the center of the box
     xc = (xright - xleft)/2 +xleft
     yc = (yright - yleft)/2 +yleft
@@ -125,19 +117,23 @@ def position():
     
 
 
-# In[22]:
 
-
-isIdeal,path = position()
-#os.remove(path)
+isIdeal=False
 while isIdeal== False:
-    isIdeal,path = position()
-os.remove(path)
+    try :
+        isIdeal,path = position()
+        os.remove(path)
+    except IndexError:
+         print('No wallets infront of you')
+         os.remove(path)
+         continue
+    except FileNotFoundError:
+        print('No such file, Process Terminated')
+        break   
+    
     
     
 
-
-# In[ ]:
 
 
 
