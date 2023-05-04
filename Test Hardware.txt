@@ -1,0 +1,14 @@
+1- Test Hardware.
+2- Add wifi to the image.
+3- Write script.
+4- Add script to boot.
+	a. User will push the button to start the rpi (optional).
+	b. make sure every compnent is initialized.
+	c. the main script
+		0. add tutorial at the beginning.
+		1. run voice commands (run based on the last word)
+		2. make the output to the closet match.
+		3. make the output of commands select the required script.
+		4. add models' options (options will be passed as arguments).
+	d. button to terminate the running model.
+	z. button to poweroff rpi.
