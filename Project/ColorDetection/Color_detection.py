@@ -10,14 +10,17 @@ flashPIN = 31
 GPIO.setup(flashPIN, GPIO.OUT)
 
 picam2 = Picamera2()
-picam2.still_configuration.main.size = (2592, 1944)
+picam2.still_configuration.main.size = (1944, 2592)
 picam2.still_configuration.align()
 picam2.configure("still")
-picam2.set_controls({"ExposureTime": 60000, "AnalogueGain": 15.0, "Saturation": 1.3})
+#picam2.set_controls({"ExposureTime": 60000, "AnalogueGain": 15.0, "Saturation": 1.3})
 picam2.start()
 GPIO.output(flashPIN, GPIO.HIGH)
 picam2.capture_file("ColorDetection/image_1.jpg")
 GPIO.output(flashPIN, GPIO.LOW)
+image = cv2.imread("ColorDetection/image_1.jpg")
+rotated_image = np.rot90(image, k=1)
+cv2.imwrite("ColorDetection/image_1.jpg", rotated_image)
 path = 'ColorDetection/image_1.jpg'
 img = cv2.imread(path)
 # Reading csv file with pandas and giving names to each column

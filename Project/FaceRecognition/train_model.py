@@ -7,7 +7,15 @@ import face_recognition
 import pickle
 import cv2
 import os
-from subprocess import call
+from pygame import mixer, quit
+
+def play_audio(audio_file):
+    mixer.init()
+    mixer.music.load(audio_file)
+    mixer.music.play()
+    while mixer.music.get_busy():
+        continue
+    quit()
 
 # our images are located in the dataset folder
 print("[INFO] start processing faces...")
@@ -48,5 +56,5 @@ print("[INFO] serializing encodings...")
 data = {"encodings": knownEncodings, "names": knownNames}
 f = open("encodings.pickle", "wb")
 f.write(pickle.dumps(data))
-call(["./mimic1/mimic", "-t", "The face detection train model is done."])
+play_audio("MainVoiceCommands/FinishTrain.wav")
 f.close()

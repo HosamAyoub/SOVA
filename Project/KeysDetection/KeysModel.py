@@ -25,6 +25,9 @@ def callImage():
     GPIO.output(flashPIN, GPIO.HIGH)
     picam2.capture_file("KeysDetection/test.jpg")
     GPIO.output(flashPIN, GPIO.LOW)
+    image = cv2.imread('KeysDetection/test.jpg')
+    rotated_image = np.rot90(image, k=1)
+    cv2.imwrite("KeysDetection/test.jpg", rotated_image)
     img_path = "KeysDetection/test.jpg"
     img = cv2.imread(img_path)
     results = model(img, conf=0.6 , save=True)
@@ -142,10 +145,10 @@ def key():
 
 if __name__ == '__main__':
     picam2 = Picamera2()
-    picam2.still_configuration.main.size = (2592, 1944)
+    picam2.still_configuration.main.size = (1944, 2592)
     picam2.still_configuration.align()
     picam2.configure("still")
-    picam2.set_controls({"ExposureTime": 60000, "AnalogueGain": 15.0, "Saturation": 1.3})
+    #picam2.set_controls({"ExposureTime": 60000, "AnalogueGain": 15.0, "Saturation": 1.3})
     picam2.start()
     model = YOLO('KeysDetection/best.pt')
     model.fuse()

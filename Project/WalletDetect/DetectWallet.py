@@ -1,5 +1,4 @@
 import RPi.GPIO as GPIO
-print("\nHello\n")
 import ultralytics
 from ultralytics import YOLO
 import os 
@@ -14,10 +13,10 @@ flashPIN = 31
 GPIO.setup(flashPIN, GPIO.OUT)
 
 picam2 = Picamera2()
-picam2.still_configuration.main.size = (2592, 1944)
-picam2.still_configuration.align()
+picam2.still_configuration.main.size = (720, 960)
+#picam2.still_configuration.align()
 picam2.configure("still")
-picam2.set_controls({"ExposureTime": 80000, "Saturation": 1.3})
+#picam2.set_controls({"ExposureTime": 80000, "Saturation": 1.3})
 picam2.start()
 model = YOLO('WalletDetect/best.pt')
 model.fuse()
@@ -36,6 +35,9 @@ def callImage():
     GPIO.output(flashPIN, GPIO.HIGH)
     picam2.capture_file("WalletDetect/test.jpg")
     GPIO.output(flashPIN, GPIO.LOW)
+    image = cv2.imread('WalletDetect/test.jpg')
+    rotated_image = np.rot90(image, k=1)
+    cv2.imwrite("WalletDetect/test.jpg", rotated_image)
     img_path = "WalletDetect/test.jpg"
     img = cv2.imread(img_path)
     results = model(img, conf=0.7 , save=True)

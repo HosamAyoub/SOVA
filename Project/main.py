@@ -9,9 +9,9 @@ import time
 from pygame import mixer, quit
 
 
-options = {'face': ['face', 'person', 'friend', 'here\'s', 'frank', 'who', 'whoa', 'who\'s', 'hope', 'name', 'versa', 'burst', 'detect', 'addict'],
+options = {'face': ['face', 'person', 'friend', 'here\'s', 'frank', 'who', 'whoa', 'who\'s', 'hope', 'name', 'versa', 'burst', 'detect', 'addict', 'oh'],
            'keys': ['keys', 'key', 'geese', 'keith', 'geeze', 'these', 'mikey'],
-           'wallet': ['wallet', 'all', 'while', 'on', 'old'],
+           'wallet': ['wallet', 'all', 'while', 'on', 'old', 'own'],
            'color': ['color', 'colour'],
            'read': ['read', 'text', 'hurry', 'harry', 'resist', 'her eat', 'hickest', 'ickets', 'paper', 'book', 'menu', 'story'],
            'stop': ['stop', 'terminate', 'rminate', 'urn', 'turn', 'fair enough', 'scott'],
@@ -140,14 +140,22 @@ def func():
                         p5 = subprocess.Popen(["python3", "OCR/NewOCR/OCR.py"])
                         play_audio("MainVoiceCommands/Reading.wav")
                         processes.append(p5)
-                    elif (len(words) > 2) and (words[-2] in options['add']):
+                    #elif options['add'] in words:
+                    elif any(add in words for add in options['add']):
                         stop()
                         result = rec.Result().strip("{}\n\"").lstrip("  \"text\" : ")
                         print(result)
-                        subprocess.Popen(["mkdir", f"FaceRecognition/dataset/{words[-1]}"])
-                        print("\nMake directory\n")
-                        p6 = subprocess.Popen(["python3", "FaceRecognition/headshots_picam.py", words[-1]])
-                        subprocess.Popen(["./mimic1/mimic", "-t", f"Taking pictures to {words[-1]}. You can just say stop at any time to stop taking pictures and start trainning"])
+                        for add in options['add']:
+                            try:
+                                index = words.index(add)
+                                print("Element found at index:", index)
+                                break
+                            except ValueError:
+                                pass
+                        name = ' '.join(words[index+1 : ])
+                        subprocess.Popen(["mkdir", f"FaceRecognition/dataset/{name}"])
+                        p6 = subprocess.Popen(["python3", "FaceRecognition/headshots_picam.py", f"{name}"])
+                        subprocess.Popen(["./mimic1/mimic", "-t", f"Taking pictures to {name}. You can just say stop at any time to stop taking pictures and start trainning"])
                         processes.append(p6)
                         while result not in options['stop']:
                             data = q.get()
@@ -164,9 +172,11 @@ def func():
                     elif words[0] in options['stop']:
                         stop()
                         play_audio("MainVoiceCommands/Stop.wav")
+                        time.sleep(0.5)
                     elif words[0] in options['bye']:
                         stop()
                         print("\nDone...")
+                        play_audio("MainVoiceCommands/Goodbye.wav")
                         return
                         
                 if dump_fn is not None:

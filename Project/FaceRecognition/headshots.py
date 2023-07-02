@@ -17,6 +17,8 @@ while True:
     GPIO.output(flashPIN, GPIO.HIGH)
     ret, frame = cam.read()
     GPIO.output(flashPIN, GPIO.LOW)
+    frame = imutils.resize(frame, width=720)
+    frame = imutils.rotate(frame, 90)
     sleep(1)
     img_name = "FaceRecognition/dataset/"+ name +"/image_{}.jpg".format(img_counter)
     cv2.imwrite(img_name, frame)

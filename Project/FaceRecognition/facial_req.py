@@ -9,6 +9,7 @@ import pickle
 import time
 import cv2
 
+result = dict()
 
 GPIO.setmode(GPIO.BOARD)
 flashPIN = 31
@@ -33,11 +34,11 @@ def face():
     # src = 2 : I had to set it to 2 inorder to use the USB webcam attached to my laptop
     #vs = VideoStream(src=2,framerate=10).start()
     picam2 = Picamera2()
-    picam2.preview_configuration.main.size = (720, 480)
+    picam2.preview_configuration.main.size = (720, 960)
     picam2.preview_configuration.main.format = "RGB888"
     picam2.video_configuration.main.format = "RGB888"
     #picam2.still_configuration.main.format = "RGB888"
-    picam2.preview_configuration.align()
+    #picam2.preview_configuration.align()
     picam2.configure("Preview")
     picam2.start()
     #vs = VideoStream(usePiCamera=True).start()
@@ -52,8 +53,10 @@ def face():
         # to 500px (to speedup processing)
         #frame = vs.read()
         GPIO.output(flashPIN, GPIO.HIGH)
+        time.sleep(0.1)
         frame = picam2.capture_array()
         frame = imutils.resize(frame, width=720)
+        frame = imutils.rotate(frame, 90)
         GPIO.output(flashPIN, GPIO.LOW)
         # Detect the fce boxes
         boxes = face_recognition.face_locations(frame)
