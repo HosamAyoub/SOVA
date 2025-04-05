@@ -55,6 +55,7 @@ This innovative approach enables BVI individuals to access crucial environmental
   Provides robust processing power for real-time data analysis.
 
 ![Glasses](https://github.com/HosamAyoub/SOVA/blob/main/images/Glasses.png)
+*Figure: Smart Glasses built with 3D printer to help the blind in their daily life*
 
 
 ## System Architecture
