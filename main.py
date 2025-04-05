@@ -132,12 +132,12 @@ def func():
                         processes.append(p3)
                     elif (len(words) > 2) and (words[-2] in options['wallet'] or words[-1] in options['wallet']):
                         stop()
-                        p4 = subprocess.Popen(["python3", "WalletDetect/DetectWallet.py"])
+                        p4 = subprocess.Popen(["python3", "WalletDetection/DetectWallet.py"])
                         play_audio("MainVoiceCommands/Wallet.wav")
                         processes.append(p4)
                     elif (len(words) > 2) and ((words[2] in options['read']) or (words[-1] in options['read']) or (words[0] in options['read'])):
                         stop()
-                        p5 = subprocess.Popen(["python3", "OCR/NewOCR/OCR.py"])
+                        p5 = subprocess.Popen(["python3", "OCR/OCR.py"])
                         play_audio("MainVoiceCommands/Reading.wav")
                         processes.append(p5)
                     #elif options['add'] in words:
