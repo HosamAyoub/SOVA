@@ -99,12 +99,12 @@ SOVA implements machine learning and computer vision techniques to boost recogni
 
     <figure>
     <img src="https://github.com/HosamAyoub/SOVA/blob/main/images/AI%20vs%20ML%20vs%20DL.png" alt="AI vs ML vs DL">
-    <figcaption><b>Figure:</b> Comparison of AI, Machine Learning, and Deep Learning methods.</figcaption>
+    <figcaption><p><b>Figure:</b> Comparison of AI, Machine Learning, and Deep Learning methods.<p></figcaption>
     </figure>
 
     <figure>
     <img src="https://github.com/HosamAyoub/SOVA/blob/main/images/Computer%20Vision%20Tasks.png" alt="Computer Vision Tasks">
-    <figcaption><b>Figure:</b> Overview of computer vision tasks for environmental analysis.</figcaption>
+    <figcaption><p><b>Figure:</b> Overview of computer vision tasks for environmental analysis.<p></figcaption>
     </figure>
 
 ### OCR and Text-to-Speech
