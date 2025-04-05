@@ -56,7 +56,7 @@ This innovative approach enables BVI individuals to access crucial environmental
 
 <figure>
 <img src="https://github.com/HosamAyoub/SOVA/blob/main/images/Glasses.png" alt="Smart Glasses">
-<figcaption>*Figure: Smart Glasses built with 3D printer to help the blind in their daily life*</figcaption>
+<figcaption><b>Figure:<b/> Smart Glasses built with 3D printer to help the blind in their daily life.</figcaption>
 </figure>
 
 
@@ -99,12 +99,12 @@ SOVA implements machine learning and computer vision techniques to boost recogni
 
     <figure>
     <img src="https://github.com/HosamAyoub/SOVA/blob/main/images/AI%20vs%20ML%20vs%20DL.png" alt="AI vs ML vs DL">
-    <figcaption>*Figure: Comparison of AI, Machine Learning, and Deep Learning methods.*</figcaption>
+    <figcaption><b>Figure:</b> Comparison of AI, Machine Learning, and Deep Learning methods.</figcaption>
     </figure>
 
     <figure>
     <img src="https://github.com/HosamAyoub/SOVA/blob/main/images/Computer%20Vision%20Tasks.png" alt="Computer Vision Tasks">
-    <figcaption>*Figure: Overview of computer vision tasks for environmental analysis.*</figcaption>
+    <figcaption><b>Figure:</b> Overview of computer vision tasks for environmental analysis.</figcaption>
     </figure>
 
 ### OCR and Text-to-Speech
