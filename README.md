@@ -193,6 +193,17 @@ This custom Linux image enhances the overall responsiveness of the system and ex
 - **Interactive Model Training:**  
   If an unknown face is detected, the system can prompt the user to add the new face by capturing headshots and training the recognition model.
 
+<iframe
+    width="300"
+    height="200"
+    src="https://www.youtube.com/embed/jNQXAC9IVRw?si=DyGBW_2ZLljEzEPk"
+    title="YouTube video player"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    referrerpolicy="strict-origin-when-cross-origin"
+    allowfullscreen
+></iframe>
+
 
 ## Results and Performance Evaluation
 
