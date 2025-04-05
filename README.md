@@ -54,6 +54,7 @@ This innovative approach enables BVI individuals to access crucial environmental
 - **Raspberry Pi 4 Integration:**  
   Provides robust processing power for real-time data analysis.
 
+![Glasses](https://github.com/HosamAyoub/SOVA/blob/main/images/Glasses.png)
 
 
 ## System Architecture
