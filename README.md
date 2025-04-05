@@ -93,10 +93,10 @@ SOVA implements machine learning and computer vision techniques to boost recogni
 - **Evaluation Metrics:**  
   Uses tools like confusion matrices and mean average precision (mAP) for performance evaluation.
 
-   ![AI vs ML vs DL]("https://github.com/HosamAyoub/SOVA/blob/main/images/AI%20vs%20ML%20vs%20DL.png")  
+   ![AI vs ML vs DL](https://github.com/HosamAyoub/SOVA/blob/main/images/AI%20vs%20ML%20vs%20DL.png)
    *Figure: Comparison of AI, Machine Learning, and Deep Learning methods.*
 
-   ![Computer Vision Tasks]("https://github.com/HosamAyoub/SOVA/blob/main/images/Computer%20Vision%20Tasks.png")  
+   ![Computer Vision Tasks](https://github.com/HosamAyoub/SOVA/blob/main/images/Computer%20Vision%20Tasks.png)  
    *Figure: Overview of computer vision tasks for environmental analysis.*
 
 ### OCR and Text-to-Speech
@@ -106,7 +106,7 @@ SOVA implements machine learning and computer vision techniques to boost recogni
 - **Text-to-Speech (TTS):**  
   A TTS engine (e.g., mimic API) converts text into audible speech.
 
-   ![Image Annotation Process]("https://github.com/HosamAyoub/SOVA/blob/main/images/Image%20Annotation%20Process.png")  
+   ![Image Annotation Process](https://github.com/HosamAyoub/SOVA/blob/main/images/Image%20Annotation%20Process.png)
    *Figure: Process of annotating images for OCR training.*
 
 
