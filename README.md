@@ -55,8 +55,8 @@ This innovative approach enables BVI individuals to access crucial environmental
   Provides robust processing power for real-time data analysis.
 
 <figure>
-<img src="https://github.com/HosamAyoub/SOVA/blob/main/images/Glasses.png" alt="Smart Glasses built with 3D printer to help the blind in their daily life">
-<figcaption>Figure: Smart Glasses built with 3D printer to help the blind in their daily life</figcaption>
+<img src="https://github.com/HosamAyoub/SOVA/blob/main/images/Glasses.png" alt="Smart Glasses">
+<figcaption>**Figure:** Smart Glasses built with 3D printer to help the blind in their daily life</figcaption>
 </figure>
 
 
@@ -97,11 +97,15 @@ SOVA implements machine learning and computer vision techniques to boost recogni
 - **Evaluation Metrics:**  
   Uses tools like confusion matrices and mean average precision (mAP) for performance evaluation.
 
-   ![AI vs ML vs DL](https://github.com/HosamAyoub/SOVA/blob/main/images/AI%20vs%20ML%20vs%20DL.png)
-   *Figure: Comparison of AI, Machine Learning, and Deep Learning methods.*
+    <figure>
+    <img src="https://github.com/HosamAyoub/SOVA/blob/main/images/AI%20vs%20ML%20vs%20DL.png" alt="AI vs ML vs DL">
+    <figcaption>**Figure:** Comparison of AI, Machine Learning, and Deep Learning methods.</figcaption>
+    </figure>
 
-   ![Computer Vision Tasks](https://github.com/HosamAyoub/SOVA/blob/main/images/Computer%20Vision%20Tasks.png)  
-   *Figure: Overview of computer vision tasks for environmental analysis.*
+    <figure>
+    <img src="https://github.com/HosamAyoub/SOVA/blob/main/images/Computer%20Vision%20Tasks.png" alt="Computer Vision Tasks">
+    <figcaption>**Figure:** Overview of computer vision tasks for environmental analysis.</figcaption>
+    </figure>
 
 ### OCR and Text-to-Speech
 
