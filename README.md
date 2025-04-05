@@ -2,7 +2,7 @@
 
 SOVA is a smart, assistive wearable designed to empower blind and visually impaired individuals by transforming visual information into audible cues. By leveraging computer vision, OCR, text-to-speech technologies, and an integrated hardware system on a Raspberry Pi 4 platform, SOVA provides real-time situational awareness and independent navigation.
 
----
+
 
 ## Table of Contents
 
@@ -22,13 +22,13 @@ SOVA is a smart, assistive wearable designed to empower blind and visually impai
 - [Authors and Supervisors](#authors-and-supervisors)
 - [License](#license)
 
----
+
 
 ## Overview
 
 SOVA (Sight Over Voice Ally) bridges the accessibility gap for blind and visually impaired (BVI) individuals. The system integrates a webcam-equipped smart glasses setup with a Raspberry Pi 4 to capture, process, and interpret visual data in real time. It then converts recognized text and objects into spoken audio, allowing users to navigate public spaces safely and independently.
 
----
+
 
 ## Abstract
 
@@ -39,7 +39,7 @@ Visual impairment affects millions globally, with over 285 million people facing
 
 This innovative approach enables BVI individuals to access crucial environmental information on the go.
 
----
+
 
 ## Features
 
@@ -54,7 +54,7 @@ This innovative approach enables BVI individuals to access crucial environmental
 - **Raspberry Pi 4 Integration:**  
   Provides robust processing power for real-time data analysis.
 
----
+
 
 ## System Architecture
 
@@ -79,7 +79,7 @@ SOVA comprises two primary subsystems:
    - **Audio Synthesis:**  
      Converts recognized text into speech via a text-to-speech engine.
 
----
+
 
 ## Software Components
 
@@ -93,10 +93,10 @@ SOVA implements machine learning and computer vision techniques to boost recogni
 - **Evaluation Metrics:**  
   Uses tools like confusion matrices and mean average precision (mAP) for performance evaluation.
 
-   ![AI vs ML vs DL](./images/figure_3.1_AI_vs_ML_DL.png)  
+   ![AI vs ML vs DL](./images/AI vs ML vs DL.png)  
    *Figure: Comparison of AI, Machine Learning, and Deep Learning methods.*
 
-   ![Computer Vision Tasks](./images/figure_3.8_CV.png)  
+   ![Computer Vision Tasks](./images/Computer Vision Tasks.png)  
    *Figure: Overview of computer vision tasks for environmental analysis.*
 
 ### OCR and Text-to-Speech
@@ -106,10 +106,10 @@ SOVA implements machine learning and computer vision techniques to boost recogni
 - **Text-to-Speech (TTS):**  
   A TTS engine (e.g., mimic API) converts text into audible speech.
 
-   ![Image Annotation Process](./images/figure_3.10_Image_Annotation.png)  
+   ![Image Annotation Process](./images/Image Annotation Process.png)  
    *Figure: Process of annotating images for OCR training.*
 
----
+
 
 ## Integration and Operation Modes
 
@@ -152,7 +152,7 @@ The integration script coordinates various hardware components and models to ope
       
 The script (see `main.py`) listens for voice commands, processes audio in real time, and launches the corresponding models via subprocesses. It also manages mode switching through push button events, ensuring a balance between energy efficiency and full functionality.
 
----
+
 
 ## Yocto-based Linux Image
 
@@ -166,7 +166,7 @@ To optimize performance and reduce resource usage, we built a custom Linux image
 
 This custom Linux image enhances the overall responsiveness of the system and extends battery life, ensuring that SOVA operates efficiently in real-time.
 
----
+
 
 
 ## Usage
@@ -185,26 +185,19 @@ This custom Linux image enhances the overall responsiveness of the system and ex
 - **Interactive Model Training:**  
   If an unknown face is detected, the system can prompt the user to add the new face by capturing headshots and training the recognition model.
 
-   ![Live Demo Screenshot](./images/live_demo.png)  
-   *Figure: Live demonstration of SOVA in action.*
-
----
 
 ## Results and Performance Evaluation
 
 Performance evaluation includes:
 - **Confusion Matrix:**  
   Displays the accuracy of object and text recognition modules.
-  
-   ![Confusion Matrix](./images/figure_4.1_Confusion_Matrix.png)  
-   *Figure: Confusion matrix for classification performance.*
 
 - **Mean Average Precision (mAP):**  
   Assesses the accuracy of object detection within the user’s field of view.
 
 These metrics ensure that SOVA delivers reliable assistance under various conditions.
 
----
+
 
 ## Future Work
 
@@ -218,7 +211,7 @@ Planned enhancements include:
 - **User-Centered Design:**  
   Refining ergonomics and interface based on feedback from BVI users.
 
----
+
 
 ## Acknowledgements
 
@@ -227,25 +220,15 @@ This project is dedicated to the blind community, whose resilience inspires us d
 - Friends and colleagues (Merihan Shaban, Maysson Khalaf) for their contributions.
 - Eng. Ramy Adel and Eng. Mazen Osama for technical guidance and support.
 
----
+
 
 ## Authors and Supervisors
 
 **Authors:**  
-- Amr Hosam Yassin  
-- Hesham Yasser Ahmed  
 - Hosam Ayoub Bayoumi  
+- Hesham Yasser Ahmed  
 - Shehab Emad Abd-ElTawwab  
+- Amr Hosam Yassin  
 
 **Supervisor:**  
 - Dr. Fatma Mazen
-
----
-
-## License
-
-This project is licensed under the [Your License Here] license. Please refer to the LICENSE file for more details.
-
----
-
-*This README is based solely on the SOVA project documentation, including the integration script and Yocto work.*
