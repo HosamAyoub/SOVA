@@ -194,6 +194,7 @@ This custom Linux image enhances the overall responsiveness of the system and ex
   If an unknown face is detected, the system can prompt the user to add the new face by capturing headshots and training the recognition model.
 
 - **Check The project video:**
+  <be / >
   [![Video](https://img.shields.io/badge/GitHub%20Pages-Live%20Demo-blue)]([https://hosamayoub.github.io/E-Commerce/](https://drive.google.com/file/d/1yzV2mCZMOBQOcQ9X4bPADtr_EdqX7H1A/view?usp=drive_link))  
 
 
